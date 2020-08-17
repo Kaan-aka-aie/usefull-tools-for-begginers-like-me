@@ -1,0 +1,16 @@
+
+%matplotlib inline
+import matplotlip.pyplot as plt
+import numpy as np
+import sympy as sp
+
+#a random graph for a simple example
+x = np.linspace(-3,3,1000)
+def f(x): return x**2
+plt.plot(x,f(x))
+plt.axhline(color = 'black')
+
+#integration between x=0 and x = 2
+plt.fill_between(x,f(x), where = [(x > 0) and (x < 2) for x in x])
+x = sy.Symbol('x')
+sy.integrate(f(x),(x,0,2))
